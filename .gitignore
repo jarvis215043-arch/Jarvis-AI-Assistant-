@@ -1,0 +1,72 @@
+# ── MARK LIII — what never belongs in the repository ──────────────────────────
+# Everything listed here is created by the app on first run. A fresh clone with
+# none of it present boots straight to the setup screen, which is the intended
+# first experience — so nothing here needs to be committed, and some of it must
+# never be.
+
+# ── Secrets. Committing any of these publishes them. ──────────────────────────
+# (Git only treats # as a comment at the START of a line — so each comment sits
+#  on its own line above its pattern. A comment after a pattern breaks the pattern.)
+# your Gemini API key, plus per-plugin credentials
+config/api_keys.json
+# the dashboard's TLS private key and certificate
+config/certs/
+# a LINKED WhatsApp session — committing it hands somebody your WhatsApp account
+config/whatsapp_web/
+# Google OAuth tokens (Gmail / Calendar plugins)
+**/token*.json
+# Google OAuth client secrets
+**/client_secret*.json
+*credentials*.json
+.env
+.env.*
+
+# Locked keys and every settings file JARVIS writes for you (all created at run time)
+config/*.json
+config/*.locked
+config/*.tmp
+config/lights.json
+
+# ── Personal data the assistant accumulates about you ─────────────────────────
+memory/*.json
+memory/*.db
+memory/chat_history/
+memory/journal/
+# JARVIS's own log + tool history (2.6) — personal
+memory/logs/
+
+# ── Local-only folders ────────────────────────────────────────────────────────
+backups/
+installer/
+platform-tools/
+models/
+
+# ── Python build noise ────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Editors and operating systems ─────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Runtime output ────────────────────────────────────────────────────────────
+*.log
+logs/
+downloads/
+screenshots/
